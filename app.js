@@ -924,7 +924,7 @@ function goToPage(page) {
   
     const chainId = await window.ethereum.request({ method: "eth_chainId" });
   
-    if (chainId !== "11155111") {
+    if (chainId !== "0xaa36a7") {
       setStatus("Please switch MetaMask to Sepolia Test Network.", "error");
       return false;
     }
