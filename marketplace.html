@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace — BlockEstate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="index.html" class="topnav-brand">
+      <div class="brand-icon">B</div>
+      <span class="brand-name">BlockEstate</span>
+    </a>
+    <div class="topnav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="marketplace.html" class="active">Marketplace</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="topnav-wallet">
+      <span class="wallet-badge" id="walletAddress">Not connected</span>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="page-header animate-in">
+        <p class="section-label">Live Listings</p>
+        <h1 class="section-title" style="margin-bottom:0;">Properties for Sale</h1>
+      </div>
+
+      <div style="display:flex; gap:12px; margin-bottom:32px;" class="animate-in">
+        <button id="loadMarketplaceBtn" class="btn-primary" style="width:auto; padding:13px 32px;">Load Listings</button>
+        <button onclick="goToPage('dashboard.html')" class="btn-ghost" style="width:auto; padding:13px 24px;">← Dashboard</button>
+      </div>
+
+      <div id="marketplaceContainer" class="market-grid animate-in"></div>
+      <p id="statusMessage" class="status-message"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

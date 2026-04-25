@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — BlockEstate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="index.html" class="topnav-brand">
+      <div class="brand-icon">B</div>
+      <span class="brand-name">BlockEstate</span>
+    </a>
+    <div class="topnav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+    <div class="topnav-wallet">
+      <span class="wallet-badge">Blockchain</span>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="page-header animate-in">
+        <p class="section-label">Our Mission</p>
+        <h1 class="section-title" style="margin-bottom:0;">About BlockEstate</h1>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-grid animate-in">
+        <div class="about-stat">
+          <span class="stat-num">ETH</span>
+          <span class="stat-label">Native Currency</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">0%</span>
+          <span class="stat-label">Intermediary Fees</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Transaction History</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="card animate-in">
+        <p class="section-label">What We Build</p>
+        <h2 class="card-title">Trustless Real Estate on Ethereum</h2>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.8; margin-bottom:20px;">
+          BlockEstate is a decentralised application that brings real estate transactions on-chain. 
+          Using Ethereum smart contracts, every property registration, listing, and acquisition is 
+          recorded immutably — no intermediaries, no hidden fees, no delays.
+        </p>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.8;">
+          The platform integrates with MetaMask for seamless wallet authentication and leverages 
+          Ganache for local blockchain development and testing, providing a complete end-to-end 
+          experience for secure property ownership transfer.
+        </p>
+
+        <hr class="divider">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+          <div>
+            <p class="section-label" style="margin-bottom:8px;">Technology</p>
+            <p style="font-size:14px; color:var(--text-muted);">Ethereum · Solidity · Ethers.js · MetaMask · Ganache</p>
+          </div>
+          <div>
+            <p class="section-label" style="margin-bottom:8px;">Security</p>
+            <p style="font-size:14px; color:var(--text-muted);">All transactions validated on-chain. Ownership immutably recorded.</p>
+          </div>
+        </div>
+
+        <button onclick="goToPage('dashboard.html')" class="btn-ghost" style="margin-top:32px;">← Back to Dashboard</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

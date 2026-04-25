@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlockEstate — Blockchain Real Estate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="index.html" class="topnav-brand">
+      <div class="brand-icon">B</div>
+      <span class="brand-name">BlockEstate</span>
+    </a>
+    <div class="topnav-links">
+      <a href="about.html">About</a>
+      <a href="marketplace.html">Marketplace</a>
+    </div>
+    <div class="topnav-wallet">
+      <span class="wallet-badge" id="walletAddress">Not connected</span>
+    </div>
+  </nav>
+
+  <div class="page">
+    <section class="hero">
+      <p class="hero-eyebrow animate-in">Blockchain · Real Estate · Web3</p>
+      <h1 class="hero-title animate-in">Property ownership,<br><em>reimagined</em> on-chain.</h1>
+      <p class="hero-subtitle animate-in">Register, list, and acquire real estate assets securely through Ethereum smart contracts. Trustless. Transparent. Permanent.</p>
+      <div class="hero-actions animate-in">
+        <button id="connectWallet" class="btn-primary" style="width:auto; padding: 14px 40px; font-size:13px;">
+          Connect Wallet
+        </button>
+        <a href="marketplace.html" class="btn-ghost" style="width:auto; padding: 14px 32px; font-size:13px; display:inline-flex;">
+          Browse Marketplace
+        </a>
+      </div>
+      <p id="statusMessage" class="status-message" style="margin-top:24px; max-width:420px;"></p>
+    </section>
+
+    <footer class="footer-strip">
+      BlockEstate &nbsp;·&nbsp; Ethereum · MetaMask · Ganache &nbsp;·&nbsp; Secure On-Chain Transactions
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

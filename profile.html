@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile — BlockEstate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="index.html" class="topnav-brand">
+      <div class="brand-icon">B</div>
+      <span class="brand-name">BlockEstate</span>
+    </a>
+    <div class="topnav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="marketplace.html">Marketplace</a>
+    </div>
+    <div class="topnav-wallet">
+      <span class="wallet-badge" id="walletAddressNav">Not connected</span>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="container-sm">
+      <div class="page-header animate-in">
+        <p class="section-label">Account</p>
+        <h1 class="section-title" style="margin-bottom:0;">My Profile</h1>
+      </div>
+
+      <div class="card animate-in">
+        <div class="profile-row">
+          <span class="row-label">User ID</span>
+          <span class="row-value" id="userId">Not connected</span>
+        </div>
+        <div class="profile-row">
+          <span class="row-label">Saved Nickname</span>
+          <span class="row-value" id="savedNickname">None</span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="field">
+          <label for="nickname">Update Nickname</label>
+          <input type="text" id="nickname" placeholder="Enter your nickname" />
+        </div>
+        <button id="saveNicknameBtn" class="btn-primary" style="margin-top:20px;">Save Nickname</button>
+        <button onclick="goToPage('dashboard.html')" class="btn-ghost">← Back to Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

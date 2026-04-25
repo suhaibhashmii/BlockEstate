@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — BlockEstate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="index.html" class="topnav-brand">
+      <div class="brand-icon">B</div>
+      <span class="brand-name">BlockEstate</span>
+    </a>
+    <div class="topnav-links">
+      <a href="index.html">Home</a>
+      <a href="profile.html">My Profile</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="topnav-wallet">
+      <span class="wallet-badge" id="walletAddressNav">Not connected</span>
+      <button onclick="switchAccount()" class="btn-ghost" style="width:auto; padding:6px 16px; font-size:11px; margin-top:0;">Switch</button>
+    </div>
+  </nav>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger-btn" id="menuToggle">☰</button>
+
+  <div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeMenu">×</button>
+    <a href="index.html">Home</a>
+    <a href="profile.html">My Profile</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="about.html">About Us</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="page">
+    <div class="dashboard-container">
+
+      <!-- Greeting -->
+      <div class="box greeting-box animate-in">
+        <div class="section-label">Dashboard</div>
+        <h1 id="dashboardTitle">Welcome back</h1>
+        <p class="description">Manage your real estate portfolio — register, list, acquire, and control properties securely on the blockchain.</p>
+        <p id="walletAddress" style="font-size:12px; color:var(--text-muted); font-family:monospace; margin-top:0;">Wallet: Not connected</p>
+      </div>
+
+      <!-- Actions -->
+      <div class="box actions-box animate-in">
+        <h2>Actions</h2>
+        <div class="action-grid">
+          <button class="action-btn" onclick="goToPage('register.html')">
+            <span class="action-icon">＋</span>
+            Register Property
+          </button>
+          <button class="action-btn" onclick="goToPage('list.html')">
+            <span class="action-icon">◈</span>
+            List for Sale
+          </button>
+          <button class="action-btn" onclick="goToPage('buy.html')">
+            <span class="action-icon">◎</span>
+            Buy Property
+          </button>
+          <button class="action-btn" onclick="goToPage('marketplace.html')">
+            <span class="action-icon">⊞</span>
+            Marketplace
+          </button>
+        </div>
+        <hr class="divider">
+        <button id="backHomeBtn" class="btn-ghost" style="margin-top:0;">← Back to Home</button>
+      </div>
+
+      <!-- My Properties -->
+      <div class="box properties-box animate-in">
+        <h2>My Properties</h2>
+        <button id="loadPropertiesBtn" class="btn-primary" style="margin-top:0;">Load Properties</button>
+        <div id="myPropertiesContainer" class="property-list"></div>
+        <p id="statusMessage" class="status-message"></p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
