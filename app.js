@@ -924,8 +924,8 @@ function goToPage(page) {
   
     const chainId = await window.ethereum.request({ method: "eth_chainId" });
   
-    if (chainId !== "0x539") {
-      setStatus("Please connect MetaMask to the Ganache network.", "error");
+    if (chainId !== 11155111) {
+      setStatus("Please switch MetaMask to Sepolia Test Network.", "error");
       return false;
     }
   
