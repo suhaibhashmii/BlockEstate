@@ -197,13 +197,9 @@ function setStatus(message, type = "info") {
 
 function resetWalletSession() {
   localStorage.removeItem("connectedWallet");
+  localStorage.removeItem("nickname");
 
-  const walletAddressEl = document.getElementById("walletAddress");
-  if (walletAddressEl) {
-    walletAddressEl.textContent = "Not connected";
-  }
-
-  window.location.replace("index.html");
+  window.location.href = "index.html";
 }
 
 
@@ -276,20 +272,15 @@ async function connectWallet() {
 
 function loadSavedWallet() {
   const walletAddressEl = document.getElementById("walletAddress");
+  const walletAddressNav = document.getElementById("walletAddressNav");
   const savedWallet = localStorage.getItem("connectedWallet");
 
   if (walletAddressEl && savedWallet) {
     walletAddressEl.textContent = `Wallet: ${savedWallet}`;
   }
 
-  const currentPage = window.location.pathname.split("/").pop();
-
-  if ((currentPage === "index.html" || currentPage === "") && savedWallet) {
-    setStatus("Wallet already connected. Redirecting...", "info");
-
-    setTimeout(() => {
-      window.location.href = "./dashboard.html";
-    }, 1500);
+  if (walletAddressNav && savedWallet) {
+    walletAddressNav.textContent = `Wallet: ${shortAddress(savedWallet)}`;
   }
 }
 
@@ -697,8 +688,10 @@ function setDashboardTitle() {
 }
 
 function setupHomeResetLinks() {
-  document.querySelectorAll(".home-reset-link").forEach((link) => {
-    link.addEventListener("click", (e) => {
+  const homeLinks = document.querySelectorAll(".home-reset-link");
+
+  homeLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
       resetWalletSession();
     });
