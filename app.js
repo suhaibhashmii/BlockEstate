@@ -887,7 +887,13 @@ function goToPage(page) {
     if (backHomeBtn) {
       backHomeBtn.addEventListener("click", () => {
         localStorage.removeItem("connectedWallet");
-        window.location.href = "index.html";
+    
+        const walletDisplay = document.getElementById("walletDisplay");
+        if (walletDisplay) {
+          walletDisplay.innerText = "Not connected";
+        }
+    
+        window.location.replace("index.html");
       });
     }
 
@@ -910,13 +916,20 @@ function goToPage(page) {
         location.reload();
       });
     
-    if (homeLink) {
+      if (homeLink) {
         homeLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            localStorage.removeItem("connectedWallet");
-            window.location.href = "index.html";
+          e.preventDefault();
+      
+          localStorage.removeItem("connectedWallet");
+      
+          const walletDisplay = document.getElementById("walletDisplay");
+          if (walletDisplay) {
+            walletDisplay.innerText = "Not connected";
+          }
+      
+          window.location.replace("index.html");
         });
-    }
+      }
   });
 
   async function checkCorrectNetwork() {
