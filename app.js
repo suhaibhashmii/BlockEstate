@@ -199,6 +199,17 @@ function resetWalletSession() {
   localStorage.removeItem("connectedWallet");
   localStorage.removeItem("nickname");
 
+  const walletAddressEl = document.getElementById("walletAddress");
+  const walletAddressNav = document.getElementById("walletAddressNav");
+
+  if (walletAddressEl) {
+    walletAddressEl.textContent = "Wallet: Not connected";
+  }
+
+  if (walletAddressNav) {
+    walletAddressNav.textContent = "Not connected";
+  }
+
   window.location.href = "index.html";
 }
 
@@ -271,6 +282,27 @@ async function connectWallet() {
 }
 
 function loadSavedWallet() {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // If user is on home page, always reset saved wallet
+  if (currentPage === "index.html" || currentPage === "" || currentPage === "BlockEstate") {
+    localStorage.removeItem("connectedWallet");
+
+    const walletAddressEl = document.getElementById("walletAddress");
+    const walletAddressNav = document.getElementById("walletAddressNav");
+
+    if (walletAddressEl) {
+      walletAddressEl.textContent = "Wallet: Not connected";
+    }
+
+    if (walletAddressNav) {
+      walletAddressNav.textContent = "Not connected";
+    }
+
+    return;
+  }
+
+  // Other pages can still show saved wallet
   const walletAddressEl = document.getElementById("walletAddress");
   const walletAddressNav = document.getElementById("walletAddressNav");
   const savedWallet = localStorage.getItem("connectedWallet");
