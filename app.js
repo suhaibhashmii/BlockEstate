@@ -820,9 +820,9 @@ async function generateSaleCertificate({
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  const logoData = await loadImageAsDataURL("logo.png");
-  const signatureData = await loadImageAsDataURL("signature.png");
-  const stampData = await loadImageAsDataURL("stamp.png");
+  const logoData = await loadImageAsDataURL("Logo.PNG");
+  const signatureData = await loadImageAsDataURL("signature.PNG");
+  const stampData = await loadImageAsDataURL("Stamp.PNG");
 
   doc.setDrawColor(60, 60, 60);
   doc.setLineWidth(0.8);
