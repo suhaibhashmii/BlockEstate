@@ -1,6 +1,6 @@
 /* CONTRACT CONFIGURATION */
 
-const contractAddress = "0x44b4669402fCB8c8Ee7b4CdC5ac3B842acB1F9A0";
+const contractAddress = "0x010D162ee8fEF752A1F47a4c743Cb7E04664a3F4";
 const SEPOLIA_CHAIN_ID = "0xaa36a7";
 
 const contractABI = [
